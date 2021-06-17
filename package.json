@@ -1,6 +1,6 @@
 {
-  "name": "termux",
-  "version": "1.1.1",
+  "name": "termux-api-wrapper",
+  "version": "1.1.3",
   "description": "Node module for Termux-API",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/roccomuso/termux.git"
+    "url": "git+https://github.com/lkd70/termux.git"
   },
   "keywords": [
     "termux",
@@ -17,17 +17,17 @@
     "wrapper",
     "node"
   ],
-  "author": "Rocco Musolino (roccomuso)",
+  "author": "LKD70",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/roccomuso/termux/issues"
+    "url": "https://github.com/lkd70/termux/issues"
   },
-  "homepage": "https://github.com/roccomuso/termux#readme",
+  "homepage": "https://github.com/lkd70/termux#readme",
   "dependencies": {
-    "dargs": "^6.0.0",
-    "debug": "^4.1.0",
+    "dargs": "^6.1.0",
+    "debug": "^4.3.1",
     "execa": "^1.0.0",
-    "glob": "^7.1.3",
+    "glob": "^7.1.7",
     "has-termux-api": "^1.0.0"
   }
 }

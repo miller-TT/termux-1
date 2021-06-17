@@ -1,35 +1,34 @@
-# termux
+# termux-api-wrapper
 
-[![NPM Version](https://img.shields.io/npm/v/termux.svg)](https://www.npmjs.com/package/termux)
-[![Dependency Status](https://david-dm.org/roccomuso/termux.png)](https://david-dm.org/roccomuso/termux)
+[![NPM Version](https://img.shields.io/npm/v/termux-api-wrapper.svg)](https://www.npmjs.com/package/termux-api-wrapper)
+[![Dependency Status](https://david-dm.org/lkd70/termux.png)](https://david-dm.org/lkd70/termux)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > Comprehensive Node.js module for [Termux-API](https://wiki.termux.com/wiki/Termux:API)
 
 ## Install
 
-1. Make sure you've first installed the [termux-api](https://play.google.com/store/apps/details?id=com.termux.api) on your Android device from the Play store.
+1. Make sure you've first installed the [termux-api](https://play.google.com/store/apps/details?id=com.termux.api) on your Android device.
 2. Then install the scripts with `apt install termux-api`.
 3. Finally get this node module:
 
-    $ `npm install --save termux`
+    $ `npm install --save termux-api-wrapper`
 
 ## Example usage
 
 ```javascript
-const api = require('termux')
+const api = require('termux-api-wrapper')
 
-if (!api.hasTermux) process.exit(1)
+if (!api.hasTermux) {
+   console.error('Cannot init termux-api');
+   process.exit(1)
+}
 
-api.vibrate()
-   .duration(1000)
-   .run()
-
-api.clipboardGet()
-   .run()
-   .then(function (text) {
-     // ...
-   })
+api.dialog()
+   .widget('spinner')
+   .values(['One', 'Two'])
+   .title('Select a number!')
+   .run().then(console.log)
 ```
 
 ## Available methods
@@ -115,11 +114,6 @@ It uses [has-termux-api](https://github.com/roccomuso/has-termux-api) to check i
 ## Debug
 
 Set the env DEBUG: `DEBUG=termux`
-
-# Author
-
-Rocco Musolino ([@roccomuso](https://twitter.com/roccomuso))
-
 # License
 
 MIT
